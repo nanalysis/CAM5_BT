@@ -1,0 +1,20 @@
+1. cam_sync.SchDoc : swap pin 4 <-> pin 6 (otherwise not in twisted pairs)
+
+2. sfp.SchDoc : Pull-ups on pin 8, 2, 6 , Pull-downs on pin 3, 7, 9
+3. C10_JB3.SchDoc : Added serial 100nF on 136,138,142,144, 152,154
+4. lmk_masteR.SchDoc : C107 not fitted
+5. level_shifting.SchDoc : added pull downs on u_level_shifter_5
+1. C10_JB2.SchDoc : remove the switches to ext1_fmc.SchDoc
+
+2. C10_JB3.SchDoc : explicitly warn that the EEPROM is ONLY FOR MAX10...
+3. power_rails, power_buck, power_buck_2 : use a better way for PWRGD
+4. ext1_fmc : added the switches here to change the address... but this will probably be stuck to GA0=1, GA1=0 so that the I2C address doesn't conflict with the SFP 0x50 and 0x51. We have to make sure the ext0_qth card has another address.
+
+We still need to add another EEPROM directly accessible by the FPGA...
+
+(the PcbDoc is not yet synchronized)
+
+
+level_shifting, NVR, dac1_ios : added SPI EEPROM, use tx_dac0_syncn as CSb
+change remote controller pins
+review UFL and DAC output swap, 5V digital
